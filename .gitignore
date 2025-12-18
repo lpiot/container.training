@@ -4,6 +4,7 @@
 
 **/terraform.tfstate
 **/terraform.tfstate.backup
+prepare-labs/tags
 prepare-labs/terraform/lab-environments
 prepare-labs/terraform/many-kubernetes/one-kubernetes-config/config.tf
 prepare-labs/terraform/many-kubernetes/one-kubernetes-module/*.tf
