@@ -79,10 +79,11 @@ A specific _branch_ of the `Github` repository is monitored by the `Flux` source
 - ⚠️ you may change the **repository URL** to the one of your own clone
 
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux create source git rocky-app \
-    --namespace=rocky-test                                                  \
-    --url=https://github.com/Musk8teers/container.training-spring-music/    \
-    --branch=rocky  --export > ./tenants/base/rocky/sync.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$                                   \
+    flux create source git rocky-app                                         \
+        --namespace=rocky-test                                               \
+        --url=https://github.com/Musk8teers/container.training-spring-music/ \
+        --branch=rocky  --export > ./tenants/base/rocky/sync.yaml
 ```
 
 ]
@@ -94,11 +95,12 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux create source git rocky-app \
 .lab[
 
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux create kustomization rocky \
-    --namespace=rocky-test                                                 \
-    --service-account=rocky                                                \
-    --source=GitRepository/rocky-app                                       \
-    --path="./k8s/" --export >> ./tenants/base/rocky/sync.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
+    flux create kustomization rocky        \
+        --namespace=rocky-test             \
+        --service-account=rocky            \
+        --source=GitRepository/rocky-app   \
+        --path="./k8s/" --export >> ./tenants/base/rocky/sync.yaml
 
 k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
     cd ./tenants/base/rocky/ &&            \

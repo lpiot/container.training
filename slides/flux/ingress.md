@@ -37,13 +37,13 @@ The **_⚙️OPS_** Team add this new install to its `Flux` config. repo
 .lab[
 
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$             \
-    mkdir -p ./clusters/CLOUDY/ingress-nginx &&        \
-    flux create source git ingress-nginx               \
-    --namespace=ingress-nginx                          \
-    --url=https://github.com/kubernetes/ingress-nginx/ \
-    --branch=release-1.12                              \
-    --export > ./clusters/CLOUDY/ingress-nginx/sync.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$                 \
+    mkdir -p ./clusters/CLOUDY/ingress-nginx &&            \
+    flux create source git ingress-nginx                   \
+        --namespace=ingress-nginx                          \
+        --url=https://github.com/kubernetes/ingress-nginx/ \
+        --branch=release-1.12                              \
+        --export > ./clusters/CLOUDY/ingress-nginx/sync.yaml
 ```
 
 ]
@@ -62,11 +62,11 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux create kustomization ingress-ngi
     --export >> ./clusters/CLOUDY/ingress-nginx/sync.yaml
 
 k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
-    cp -p ~/container.training/k8s/M6-ingress-nginx-kustomization.yaml    \
-                    ./clusters/CLOUDY/ingress-nginx/kustomization.yaml && \
-    cp -p ~/container.training/k8s/M6-ingress-nginx-components.yaml       \
-          ~/container.training/k8s/M6-ingress-nginx-*-patch.yaml          \
-                    ./clusters/CLOUDY/ingress-nginx/
+    cp -p ~/container.training/k8s/M6-ingress-nginx-kustomization.yaml \
+          ./clusters/CLOUDY/ingress-nginx/kustomization.yaml &&        \
+    cp -p ~/container.training/k8s/M6-ingress-nginx-components.yaml    \
+          ~/container.training/k8s/M6-ingress-nginx-*-patch.yaml       \
+          ./clusters/CLOUDY/ingress-nginx/
 ```
 
 ]
@@ -78,7 +78,7 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
 .lab[
 
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
+k8s@shpod:~/fleet-config-using-flux-XXXXX$     \
     git add ./clusters/CLOUDY/ingress-nginx && \
     git commit -m':wrench: :rocket: add Ingress-controller' && \
     git push

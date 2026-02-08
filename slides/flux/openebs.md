@@ -9,12 +9,13 @@ It installs with `Helm` charts.
 .lab[
 
 ```bash
-k8s@shpod ~$  mkdir -p ./clusters/METAL/openebs/ &&                  \
-              cp -pr ~/container.training/k8s/M6-openebs-*.yaml      \
-                    ./clusters/METAL/openebs/ &&                     \
-              cd ./clusters/METAL/openebs/ &&                        \
-              mv M6-openebs-kustomization.yaml kustomization.yaml && \
-              cd - 
+k8s@shpod:~/fleet-config-using-flux-XXXXX$                 \
+    mkdir -p ./clusters/METAL/openebs/ &&                  \
+    cp -pr ~/container.training/k8s/M6-openebs-*.yaml      \
+           ./clusters/METAL/openebs/ &&                    \
+    cd ./clusters/METAL/openebs/ &&                        \
+    mv M6-openebs-kustomization.yaml kustomization.yaml && \
+    cd -
 ```
 
 ]
@@ -26,10 +27,11 @@ k8s@shpod ~$  mkdir -p ./clusters/METAL/openebs/ &&                  \
 .lab[
 
 ```bash
-k8s@shpod ~$ flux create source helm openebs \
-    --url=https://openebs.github.io/openebs  \
-    --interval=3m                            \
-    --export > ./clusters/METAL/openebs/sync.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$       \
+    flux create source helm openebs              \
+        --url=https://openebs.github.io/openebs  \
+        --interval=3m                            \
+        --export > ./clusters/METAL/openebs/sync.yaml
 ```
 
 ]
@@ -41,12 +43,13 @@ k8s@shpod ~$ flux create source helm openebs \
 .lab[
 
 ```bash
-k8s@shpod ~$ flux create helmrelease openebs    \
-    --namespace=openebs                         \
-    --source=HelmRepository/openebs.flux-system \
-    --chart=openebs                             \
-    --values-from=ConfigMap/openebs-values     \
-    --export >> ./clusters/METAL/openebs/sync.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$          \
+    flux create helmrelease openebs                 \
+        --namespace=openebs                         \
+        --source=HelmRepository/openebs.flux-system \
+        --chart=openebs                             \
+        --values-from=ConfigMap/openebs-values      \
+        --export >> ./clusters/METAL/openebs/sync.yaml
 ```
 
 ]

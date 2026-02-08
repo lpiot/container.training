@@ -55,15 +55,16 @@ Creating the **_⚗️TEST_** _tenant_
 .lab[
 
 - ⚠️ Think about renaming the repo with your own suffix
+
 ```bash
 k8s@shpod:~$ cd fleet-config-using-flux-XXXXX/
-k8s@shpod:~/fleet-config-using-flux-XXXXX$     \
-    flux create kustomization tenant-test      \
-        --namespace=flux-system                \
-        --source=GitRepository/flux-system     \
-        --path ./tenants/test                  \
-        --interval=1m                          \
-        --prune --export >> clusters/CLOUDY/tenants.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$ \ 
+    flux create kustomization tenant-test  \
+        --namespace=flux-system            \
+        --source=GitRepository/flux-system \
+        --path ./tenants/test              \
+        --interval=1m                      \
+        --prune --export >> ./clusters/CLOUDY/tenants.yaml
 ```
 
 ]
@@ -83,7 +84,7 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
         --source=GitRepository/flux-system \
         --path ./tenants/prod              \
         --interval=3m                      \
-        --prune --export >> clusters/CLOUDY/tenants.yaml
+        --prune --export >> ./clusters/CLOUDY/tenants.yaml
 ```
 
 ]
@@ -114,7 +115,7 @@ class: pic
 .lab[
 
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux get all
+k8s@shpod:~$ flux get all
 NAMESPACE       NAME                            REVISION                SUSPENDED
     READY   MESSAGE
 flux-system     gitrepository/flux-system       main@sha1:0466652e      False

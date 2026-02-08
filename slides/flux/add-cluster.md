@@ -31,16 +31,16 @@ Let's copy the 📂 `./clusters/CLOUDY` folder and rename it 📂 `./clusters/ME
 - don't forget to change the patch to `clusters/METAL`
 
 ```bash
-k8s@shpod:~$ export GITHUB_TOKEN="my-token" &&         \
-      export GITHUB_USER="container-training-fleet" && \
-      export GITHUB_REPO="fleet-config-using-flux-XXXXX"
+k8s@shpod:~$ export GITHUB_TOKEN="my-token" &&       \
+    export GITHUB_USER="container-training-fleet" && \
+    export GITHUB_REPO="fleet-config-using-flux-XXXXX"
 
 k8s@shpod:~$ flux bootstrap github \
-      --owner=${GITHUB_USER}       \
-      --repository=${GITHUB_REPO}  \
-      --team=OPS                   \
-      --team=ROCKY --team=MOVY     \
-      --path=clusters/METAL
+    --owner=${GITHUB_USER}         \
+    --repository=${GITHUB_REPO}    \
+    --team=OPS                     \
+    --team=ROCKY --team=MOVY       \
+    --path=clusters/METAL
 ```
 ]
 

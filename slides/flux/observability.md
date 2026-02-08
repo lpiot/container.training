@@ -86,8 +86,8 @@ We have to
 
 ```bash
 k8s@shpod:~$ flux create secret git flux-system \
-  --url=ssh://git@github.com/container-training-fleet/fleet-config-using-flux-XXXXX \
-  --private-key-file=/home/k8s/.ssh/id_ed25519
+    --url=ssh://git@github.com/container-training-fleet/fleet-config-using-flux-XXXXX \
+    --private-key-file=/home/k8s/.ssh/id_ed25519
 ```
 
 - copy the **public** key into the deployment keys of the `Github` repository

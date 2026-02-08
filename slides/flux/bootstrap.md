@@ -99,16 +99,16 @@ class: pic
 - and the `GITHUB_REPO` value by our specific repository name
 
 ```bash
-k8s@shpod:~$ export GITHUB_TOKEN="my-token" &&         \
-      export GITHUB_USER="container-training-fleet" && \
-      export GITHUB_REPO="fleet-config-using-flux-XXXXX"
+k8s@shpod:~$ export GITHUB_TOKEN="my-token" &&       \
+    export GITHUB_USER="container-training-fleet" && \
+    export GITHUB_REPO="fleet-config-using-flux-XXXXX"
 
 k8s@shpod:~$ flux bootstrap github \
-      --owner=${GITHUB_USER}       \
-      --repository=${GITHUB_REPO}  \
-      --team=OPS                   \
-      --team=ROCKY --team=MOVY     \
-      --path=clusters/CLOUDY
+    --owner=${GITHUB_USER}         \
+    --repository=${GITHUB_REPO}    \
+    --team=OPS                     \
+    --team=ROCKY --team=MOVY       \
+    --path=clusters/CLOUDY
 ```
 ]
 
@@ -126,15 +126,15 @@ You don't need to rely onto a Github organization: any `Github` personnal reposi
 - and the `GITHUB_REPO` value by our specific repository name
 
 ```bash
-k8s@shpod:~$ export GITHUB_TOKEN="my-token" &&         \
-      export GITHUB_USER="lpiot" && \
-      export GITHUB_REPO="fleet-config-using-flux-XXXXX"
+k8s@shpod:~$ export GITHUB_TOKEN="my-token" && \
+    export GITHUB_USER="lpiot" &&              \
+    export GITHUB_REPO="fleet-config-using-flux-XXXXX"
 
 k8s@shpod:~$ flux bootstrap github \
-      --owner=${GITHUB_USER}       \
-      --personal                   \
-      --repository=${GITHUB_REPO}  \
-      --path=clusters/CLOUDY
+    --owner=${GITHUB_USER}         \
+    --personal                     \
+    --repository=${GITHUB_REPO}    \
+    --path=clusters/CLOUDY
 ```
 ]
 

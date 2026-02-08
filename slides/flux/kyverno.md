@@ -18,15 +18,16 @@ Please, refer to the [`Setting up Kubernetes` chapter in the High Five M4 module
 .lab[
 
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$  \
-        mkdir -p clusters/CLOUDY/kyverno && \
-        cp -pr ~/container.training/k8s/
+k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
+    mkdir -p clusters/CLOUDY/kyverno &&    \
+    cp -pr ~/container.training/k8s/
 
-k8s@shpod ~$ flux create source helm kyverno \
-    --namespace=kyverno                         \
-    --url=https://kyverno.github.io/kyverno/ \
-    --interval=3m                            \
-    --export > ./clusters/CLOUDY/kyverno/sync2.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$       \
+    flux create source helm kyverno              \
+        --namespace=kyverno                      \
+        --url=https://kyverno.github.io/kyverno/ \
+        --interval=3m                            \
+        --export > ./clusters/CLOUDY/kyverno/sync2.yaml
 ```
 
 ]
@@ -38,14 +39,15 @@ k8s@shpod ~$ flux create source helm kyverno \
 .lab[
 
 ```bash
-k8s@shpod ~$ flux create helmrelease kyverno    \
-    --namespace=kyverno                         \
-    --source=HelmRepository/kyverno.flux-system \
-    --target-namespace=kyverno                  \
-    --create-target-namespace=true              \
-    --chart-version=">=3.4.2"                   \
-    --chart=kyverno                             \
-    --export >> ./clusters/CLOUDY/kyverno/sync.yaml
+k8s@shpod:~/fleet-config-using-flux-XXXXX$          \
+    flux create helmrelease kyverno                 \
+        --namespace=kyverno                         \
+        --source=HelmRepository/kyverno.flux-system \
+        --target-namespace=kyverno                  \
+        --create-target-namespace=true              \
+        --chart-version=">=3.4.2"                   \
+        --chart=kyverno                             \
+        --export >> ./clusters/CLOUDY/kyverno/sync.yaml
 ```
 
 ]
@@ -57,11 +59,16 @@ k8s@shpod ~$ flux create helmrelease kyverno    \
 This polivy is just an example.
 It enforces the use of a `Service Account` in `Flux` configurations
 
+.lab[
+
 ```bash
-k8s@shpod:~/fleet-config-using-flux-XXXXX$           \
-    mkdir -p clusters/CLOUDY/kyverno-policies &&     \
+k8s@shpod:~/fleet-config-using-flux-XXXXX$       \
+    mkdir -p clusters/CLOUDY/kyverno-policies && \
     cp -pr ~/container.training/k8s/M6-kyverno-enforce-service-account.yaml \
-            ./clusters/CLOUDY/kyverno-policies/
+           ./clusters/CLOUDY/kyverno-policies/
+```
+
+]
 
 ---
 
@@ -84,13 +91,18 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$           \
 
 
 ## Apply Kyverno policy
-```bash
-flux create kustomization 
 
---path 
---source GitRepository/
---export > ./clusters/CLOUDY/kyverno-policies/sync.yaml
+.lab[
+
+```bash
+k8s@shpod:~/fleet-config-using-flux-XXXXX$     \
+    flux create kustomization                  \ 
+        --path                                 \
+        --source GitRepository/                \
+        --export > ./clusters/CLOUDY/kyverno-policies/sync.yaml
 ```
+
+]
 
 ---
 
