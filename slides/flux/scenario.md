@@ -149,7 +149,7 @@ Both **_🎸ROCKY_** and **_🎬MOVY_** teams should use **dedicated _"tenants"_
 
 - This app is mostly based on a `Spring` framework demo called spring-music
 
-- This lab uses a dedicated fork [container.training-spring-music](https://github.com/Musk8teers/container.training-spring-music):
+- This lab uses a dedicated fork [container.training-spring-music](https://github.com/container-training-fleet/container.training-spring-music):
   -  with 2 branches dedicated to the **_🎸ROCKY_** and **_🎬MOVY_** teams
 
 - The app architecture consists of 2 tiers:
@@ -164,22 +164,22 @@ This is where we configure the application to connect to the `PostgreSQL` databa
 
 .lab[
 
-🔍 Location: [/src/main/resources/application.yml](https://github.com/Musk8teers/container.training-spring-music/blob/main/src/main/resources/application.yml)
+🔍 Location: [/src/main/resources/application.yml](https://github.com/container-training-fleet/container.training-spring-music/blob/main/src/main/resources/application.yml)
 
 ]
 
-`PROFILE=postgres` env var is set in [docker-compose.yaml](https://github.com/Musk8teers/container.training-spring-music/blob/main/docker-compose.yml) file, for example…  
+`PROFILE=postgres` env var is set in [docker-compose.yaml](https://github.com/container-training-fleet/container.training-spring-music/blob/main/docker-compose.yml) file, for example…  
 
 ---
 
 ### 📂 specific file: AlbumRepositoryPopulator.java
 
 
-This is where the album collection is initially loaded from the file [`album.json`](https://github.com/Musk8teers/container.training-spring-music/blob/main/src/main/resources/albums.json)
+This is where the album collection is initially loaded from the file [`album.json`](https://github.com/container-training-fleet/container.training-spring-music/blob/main/src/main/resources/albums.json)
 
 .lab[
 
-🔍 Location: [`/src/main/java/org/cloudfoundry/samples/music/repositories/AlbumRepositoryPopulator.java`](https://github.com/Musk8teers/container.training-spring-music/blob/main/src/main/java/org/cloudfoundry/samples/music/repositories/AlbumRepositoryPopulator.java)
+🔍 Location: [`/src/main/java/org/cloudfoundry/samples/music/repositories/AlbumRepositoryPopulator.java`](https://github.com/container-training-fleet/container.training-spring-music/blob/main/src/main/java/org/cloudfoundry/samples/music/repositories/AlbumRepositoryPopulator.java)
 
 ]
 

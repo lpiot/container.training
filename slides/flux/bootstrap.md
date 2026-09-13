@@ -349,7 +349,7 @@ class: extra-details
 
 ### Flux -- for more info
 
-Please, refer to the [`Flux` chapter in the High Five M3 module](./3.yml.html#toc-helm-chart-format)
+Please, refer to the [`Flux` chapter in the High Five M3 module](./3.yml.html#toc-fluxcd)
 
 ---
 

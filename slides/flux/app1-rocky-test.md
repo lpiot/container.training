@@ -60,7 +60,7 @@ Let's create these permissions!
 
 ```bash
 k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
-    cp ~/container.training/k8s/tenants/base/rocky/cluster-role.yaml ./tenants/base/rocky/
+    cp ~/container.training/k8s/flux/tenants/base/rocky/cluster-role.yaml ./tenants/base/rocky/
 ```
 
 ]
@@ -81,7 +81,7 @@ A specific _branch_ of the `Github` repository is monitored by the `Flux` source
 ```bash
 k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux create source git rocky-app \
     --namespace=rocky-test                                                  \
-    --url=https://github.com/Musk8teers/container.training-spring-music/    \
+    --url=https://github.com/container-training-fleet/container.training-spring-music/    \
     --branch=rocky  --export > ./tenants/base/rocky/sync.yaml
 ```
 
@@ -141,8 +141,8 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$ \
 ```bash
 k8s@shpod:~/fleet-config-using-flux-XXXXX$ \ 
     mkdir -p ./tenants/test/rocky &&       \
-    cp ~/container.training/k8s/tenants/test/rocky/patch.yaml ./tenants/test/rocky/ && \
-    cp ~/container.training/k8s/tenants/test/rocky/kustomization.yaml ./tenants/test/rocky/kustomization.yaml
+    cp ~/container.training/k8s/flux/tenants/test/rocky/patch.yaml ./tenants/test/rocky/ && \
+    cp ~/container.training/k8s/flux/tenants/test/rocky/kustomization.yaml ./tenants/test/rocky/kustomization.yaml
 ```
 
 ---
@@ -321,11 +321,11 @@ class: pic
 ## Upgrading ROCKY app
 
 The Git source named `rocky-app` is pointing at
-- a Github repository named [Musk8teers/container.training-spring-music](https://github.com/Musk8teers/container.training-spring-music/)
+- a Github repository named [container-training-fleet/container.training-spring-music](https://github.com/container-training-fleet/container.training-spring-music/)
 - on its branch named `rocky`
 
 This branch deploy the v1.0.0 of the _Web_ app:
-`spec.template.spec.containers.image: ghcr.io/musk8teers/container.training-spring-music:1.0.0`
+`spec.template.spec.containers.image: ghcr.io/container-training-fleet/container.training-spring-music:1.0.0`
 
 What happens if the **_🎸ROCKY_** team upgrades its branch to deploy `v1.0.1` of the _Web_ app?
 
