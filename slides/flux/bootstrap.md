@@ -56,11 +56,11 @@ Before installation, we need to check that:
 
 ```bash
 k8s@shpod:~$ flux --version
-flux version 2.7.5
+flux version 2.9.5
 
 k8s@shpod:~$ flux check --pre
 ► checking prerequisites
-✔ Kubernetes 1.35.1 >=1.32.0-0
+✔ Kubernetes 1.36.3+k0s >=1.33.0-0
 ✔ prerequisites checks passed
 ```
 
