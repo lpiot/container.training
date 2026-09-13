@@ -76,7 +76,7 @@ As of October 2025, the [CNCF landscape](https://landscape.cncf.io/?fullscreen=y
 
 - more than 80 Cloud Native [storage](https://landscape.cncf.io/guide#runtime--cloud-native-storage) solutions.
 
-Which one(s) are we going to choose? And Why?
+Which one(s) are we going to choose? And why?
 
 ---
 

@@ -85,7 +85,7 @@ It relies on some concepts:
 
 - `ClusterServiceVersion`, a version of an operator that is deployed onto the k8s cluster
 
-- `OperatorGroup`, a configuration to configure multitenance for the to-be-deployed operator  
+- `OperatorGroup`, a configuration to configure multitenancy for the _to-be-deployed_ operator  
 
 - `OperatorCondition`, a CRD to keep OLM aware of the deployed operator status
 

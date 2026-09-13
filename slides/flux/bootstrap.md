@@ -116,7 +116,7 @@ class: extra-details
 
 ### Creating a personnal dedicated `Github` repo
 
-You don't need to rely onto a Github organization: any `Github` personnal repository is OK.
+You don't need to rely onto a Github organization: any `Github` personal repository is OK.
 
 .lab[
 

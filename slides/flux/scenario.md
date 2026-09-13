@@ -14,7 +14,7 @@
 
 - We'll start with a basic Kubernetes cluster (on cloud or on premises)
 
-- We'll and enhance it by adding features one at a time
+- We'll then enhance it by adding features one at a time
 
 ---
 
