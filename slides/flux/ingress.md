@@ -45,10 +45,10 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$ flux create kustomization traefik \
     --source=GitRepository/catalog                                           \
     --path="./k8s/flux/traefik/"                                             \
     --export >> ./clusters/CLOUDY/install-components/sync-traefik.yaml
+```
 
 ⚠ Don't forget to add this entry into the `kustomization.yaml` file
 … And to commit/push to Github!
-```
 
 ]
 

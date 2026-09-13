@@ -299,7 +299,7 @@ talosctl --talosconfig ./talos-out/talosconfig --nodes $firstNodeIP \
   edit machineconfig
 ```
 
-- Comment the machine.nodeTaints section
+- Comment the `machine.nodeTaints` section
 
 ]
 

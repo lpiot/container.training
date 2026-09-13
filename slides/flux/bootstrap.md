@@ -105,9 +105,7 @@ k8s@shpod:~$ export GITHUB_TOKEN="my-token" &&         \
 k8s@shpod:~$ flux bootstrap github \
       --owner=${GITHUB_USER}       \
       --repository=${GITHUB_REPO}  \
-      --team=OPS                   \
-      --team=STORAGE-ADMINS        \
-      --team=NETWORK-ADMINS        \
+      --team=OPS --team=STORAGE-ADMINS --team=NETWORK-ADMINS \
       --path=clusters/CLOUDY
 ```
 ]
@@ -142,7 +140,7 @@ k8s@shpod:~$ flux bootstrap github \
 
 class: extra-details
 
-Here is the result
+Here is the result 1/2
 
 ```bash
 ✔ repository "https://github.com/container-training-fleet/fleet-config-using-flux-XXXXX" created                                                                                                                                                        
@@ -163,6 +161,15 @@ Here is the result
 ✔ installed components
 ✔ reconciled components
 ► determining if source secret "flux-system/flux-system" exists
+```
+
+---
+
+class: extra-details
+
+Here is the result 2/2
+
+```bash
 ► generating source secret
 ✔ public key: ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBFqaT8B8SezU92qoE+bhnv9xONv9oIGuy7yVAznAZfyoWWEVkgP2dYDye5lMbgl6MorG/yjfkyo75ETieAE49/m9D2xvL4esnSx9zsOLdnfS9W99XSfFpC2n6soL+Exodw==
 ✔ configured deploy key "flux-system-main-flux-system-./clusters/CLOUDY" for "https://github.com/container-training-fleet/fleet-config-using-flux-XXXXX"
@@ -434,9 +441,9 @@ k8s@shpod:~/fleet-config-using-flux-XXXXX$     \
     cd ./clusters/CLOUDY/install-components && \
     kustomize create --autodetect &&           \
     cd -
+```
 
 - and commit & push
-```
 ]
 
 ---

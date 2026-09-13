@@ -78,7 +78,15 @@ monitoring      gitrepository/monitoring        main@sha1:82c37257      False   
 
 NAMESPACE       NAME                                    REVISION                SUSPENDED       READY   MESSAGE
 monitoring      helmrelease/kube-prometheus-stack       69.8.2+e104d0db587d     False           Unknown Running 'install' action with timeout of 5m0s
+```
 
+---
+
+### Results
+
+.lab[
+
+```bash
 NAMESPACE       NAME                            REVISION                SUSPENDED       READY   MESSAGE
 flux-system     kustomization/flux-system       main@sha1:cc5a2e80      False           True    Applied revision: main@sha1:cc5a2e80
 flux-system     kustomization/monitoring        main@sha1:d8ec150e      False           True    Applied revision: main@sha1:d8ec150e
